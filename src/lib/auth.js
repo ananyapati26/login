@@ -66,7 +66,7 @@ export const authOptions = {
 
         return {
           id: `${existingUser.id}`,
-          name: existingUser.username || null,
+          username: existingUser.username || null,
           email: existingUser.email,
           image: existingUser.image || "/default-profile.jpg",
         };
