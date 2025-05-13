@@ -1,8 +1,15 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+ WRITE IN TERMINAL THIS COMMAND AND RUN TO GET THIS BOILERPLATE
+npx degit ananyapati26/login my-app
 
-First, run the development server:
+STEPS TO FOLLOW NEXT 
+npm i 
+update .env and .env.local with your own 
+MONGODB_URL , GOOGLE_CLIENT_ID and GOOGLE_SECRECT_ID
+
+Then, run the development server:
 
 ```bash
 npm run dev
