@@ -17,6 +17,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
 import GoogleSignInButton from "@/app/components/ui/googlebutton";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 const FormSchema = z
   .object({
@@ -47,23 +48,12 @@ const SignUpform = () => {
     },
   });
 
-  const onSubmit = async (values) => {
-    const response = await fetch("/api/user", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: values.username,
-        email: values.email,
-        password: values.password,
-      }),
-    });
-
-    if (response.ok) {
+   const onSubmit = async ({ username, email, password }) => {
+    try {
+      await axios.post("/api/user", { username, email, password });
       router.push("/login");
-    } else {
-      console.log("User creation failed:", response);
+    } catch (err) {
+      console.error("User creation failed:", err);
     }
   };
 
